@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace form
 {
-    public partial class Form1 : Form
+    public partial class fromtset : Form
     {
-        public Form1()
+        public fromtset()
         {
             InitializeComponent();
         }

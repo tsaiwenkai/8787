@@ -19,7 +19,7 @@ namespace form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            fromtset f = new fromtset();
             f.Show();
         }
     }
