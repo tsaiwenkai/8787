@@ -53,6 +53,12 @@
     <Compile Include="1. Overview\FrmOverview.Designer.cs">
       <DependentUpon>FrmOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="1. Overview\Frmtool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1. Overview\Frmtool.Designer.cs">
+      <DependentUpon>Frmtool.cs</DependentUpon>
+    </Compile>
     <Compile Include="NWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="1. Overview\FrmOverview.resx">
       <DependentUpon>FrmOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1. Overview\Frmtool.resx">
+      <DependentUpon>Frmtool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="test\fromtset.resx">
       <DependentUpon>fromtset.cs</DependentUpon>

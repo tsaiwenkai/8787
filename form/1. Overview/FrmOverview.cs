@@ -16,7 +16,7 @@ namespace form._1._Overview
         public FrmOverview()
         {
             InitializeComponent();
-            tabControl1.SelectedIndex = 1;
+            tabControl1.SelectedIndex = 2;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -136,5 +136,101 @@ namespace form._1._Overview
             categoriesTableAdapter1.Fill(nwDataSet1.Categories);
             dataGridView2.DataSource = nwDataSet1.Categories;
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            customersTableAdapter1.Fill(nwDataSet1.Customers);
+            dataGridView2.DataSource = nwDataSet1.Customers;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            productsTableAdapter1.FillByUnitsPrice(nwDataSet1.Products, 30);
+            dataGridView2.DataSource = nwDataSet1.Products;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            productsTableAdapter1.InsertProducts("xxx", true);
+            
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            productsTableAdapter1.Update(nwDataSet1.Products);
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            //productsTableAdapter1.Fill(nwDataSet1.Products);
+            //bindingSource1.DataSource = nwDataSet1.Products;//為ROW
+            //dataGridView3.DataSource = bindingSource1;
+
+            // load在按下之後position就=1了,所以執行下列方法label就會顯示出來
+            //showP();
+            //-----------------------------------------------------
+
+            categoriesTableAdapter1.Fill(nwDataSet1.Categories);
+            bindingSource1.DataSource = nwDataSet1.Categories;
+            dataGridView3.DataSource = bindingSource1;
+
+
+            textBox1.DataBindings.Add("Text", bindingSource1, "CategoryName");
+                                                      //Text為TB的屬性 , BS為連繫的物件  ,最後為哪個欄位
+            pictureBox1.DataBindings.Add("Image", bindingSource1, "Picture", true);
+            //同上最後布林值為轉換圖片的個視為true
+
+            bindingNavigator1.BindingSource = bindingSource1;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            bindingSource1.Position -= 1;
+            //showP();
+
+        }
+
+
+
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            bindingSource1.Position += 1;
+            //showP();    
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            bindingSource1.Position = 0;
+            //showP();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            bindingSource1.Position = nwDataSet1.Categories.Count-1;
+            //showP();
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+            label2.Text = $"{bindingSource1.Position + 1}/{nwDataSet1.Categories.Count}";
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Frmtool fw = new Frmtool();
+            fw.Show();
+        }
+        //下列方法可以至為以上方法
+        //void showP()
+        //{
+        //    //做一個方法顯示label內的數字,如果BS的Count不為0的話就顯示Position+1/後面的為總數
+
+        //    if (bindingSource1.Count != 0)
+        //    {
+        //        label2.Text = $"{bindingSource1.Position + 1}/{nwDataSet1.Products.Count}";
+        //    }
+
+        //}
     }
 }
