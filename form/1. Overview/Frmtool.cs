@@ -31,5 +31,38 @@ namespace form._1._Overview
             this.categoriesTableAdapter.Fill(this.nWDataSet.Categories);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result=openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                MessageBox.Show(openFileDialog1.FileName);
+                picturePictureBox.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //DialogResult color=colorDialog1.ShowDialog();
+            //if (color == DialogResult.OK)
+            //{
+            //    this.BackColor = colorDialog1.Color;
+            //}
+            //else 
+            //{
+            //    return;
+            //}
+
+
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                BackColor = colorDialog1.Color;
+            }
+        }
     }
 }

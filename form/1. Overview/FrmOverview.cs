@@ -16,7 +16,7 @@ namespace form._1._Overview
         public FrmOverview()
         {
             InitializeComponent();
-            tabControl1.SelectedIndex = 2;
+            tabControl1.SelectedIndex = tabControl1.TabCount-1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -220,6 +220,18 @@ namespace form._1._Overview
         {
             Frmtool fw = new Frmtool();
             fw.Show();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            this.productsTableAdapter1.Fill(nwDataSet1.Products);
+            this.categoriesTableAdapter1.Fill(nwDataSet1.Categories);
+            this.customersTableAdapter1.Fill(nwDataSet1.Customers);
+
+            dataGridView4.DataSource = nwDataSet1.Products;
+            dataGridView5.DataSource = nwDataSet1.Categories;
+            dataGridView6.DataSource = nwDataSet1.Customers;
+
         }
         //下列方法可以至為以上方法
         //void showP()
