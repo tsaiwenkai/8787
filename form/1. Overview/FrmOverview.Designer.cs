@@ -90,6 +90,10 @@ namespace form._1._Overview
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -615,9 +619,10 @@ namespace form._1._Overview
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(6, 3);
+            this.button17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button17.Location = new System.Drawing.Point(0, 0);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(91, 51);
+            this.button17.Size = new System.Drawing.Size(107, 51);
             this.button17.TabIndex = 0;
             this.button17.Text = "row";
             this.button17.UseVisualStyleBackColor = true;
@@ -656,8 +661,9 @@ namespace form._1._Overview
             // listBox2
             // 
             this.listBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
+            this.listBox2.ItemHeight = 15;
             this.listBox2.Location = new System.Drawing.Point(0, 0);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(1173, 418);
@@ -672,6 +678,10 @@ namespace form._1._Overview
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button21);
+            this.splitContainer1.Panel1.Controls.Add(this.button20);
+            this.splitContainer1.Panel1.Controls.Add(this.button19);
+            this.splitContainer1.Panel1.Controls.Add(this.button18);
             this.splitContainer1.Panel1.Controls.Add(this.button17);
             // 
             // splitContainer1.Panel2
@@ -735,6 +745,50 @@ namespace form._1._Overview
             this.splitContainer4.Size = new System.Drawing.Size(781, 195);
             this.splitContainer4.SplitterDistance = 260;
             this.splitContainer4.TabIndex = 0;
+            // 
+            // button18
+            // 
+            this.button18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button18.Location = new System.Drawing.Point(0, 51);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(107, 51);
+            this.button18.TabIndex = 1;
+            this.button18.Text = "[]-[]查詢";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button19
+            // 
+            this.button19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button19.Location = new System.Drawing.Point(0, 102);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(107, 51);
+            this.button19.TabIndex = 2;
+            this.button19.Text = "writeXml";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button20.Location = new System.Drawing.Point(0, 153);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(107, 51);
+            this.button20.TabIndex = 3;
+            this.button20.Text = "readXml";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // button21
+            // 
+            this.button21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button21.Location = new System.Drawing.Point(0, 204);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(107, 51);
+            this.button21.TabIndex = 4;
+            this.button21.Text = "縮放PANL";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // FrmOverview
             // 
@@ -844,5 +898,9 @@ namespace form._1._Overview
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
     }
 }

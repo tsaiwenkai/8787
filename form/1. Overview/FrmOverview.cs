@@ -231,18 +231,69 @@ namespace form._1._Overview
             dataGridView4.DataSource = nwDataSet1.Products;
             dataGridView5.DataSource = nwDataSet1.Categories;
             dataGridView6.DataSource = nwDataSet1.Customers;
+            //以上把資料庫裏面的Row秀出來
+            //-----------------------------------------------------------
+            //再來把Listbox把Table裡的書性秀出你要的資料
 
+            listBox2.Items.Clear();
+            //迴圈裡放TABEL有幾個TAB
+            for(int i=0; i <= nwDataSet1.Tables.Count - 1; i++)
+            {
+                DataTable table = nwDataSet1.Tables[i];
+                listBox2.Items.Add(table.TableName);
+
+
+                string s = "";
+                for(int column =0; column <= table.Columns.Count - 1; column++)
+                {
+                    //DataColumn columns = table.Columns[column];
+                    //s += columns.ColumnName + "  ";
+                    s += table.Columns[column]+"\t";
+
+                }
+                listBox2.Items.Add(s);
+                //----------------------------------------
+                string x = "";
+                for(int row = 0; row <= table.Rows.Count - 1; row++)
+                {
+                    x = "";
+                    for(int j = 0; j <= table.Columns.Count - 1; j++)
+                    {
+
+                        x += table.Rows[row][j] + "\t";
+                        
+                    }
+                    listBox2.Items.Add(x);
+                }
+                
+                listBox2.Items.Add("--------------------------------------------------------");
+            }
         }
-        //下列方法可以至為以上方法
-        //void showP()
-        //{
-        //    //做一個方法顯示label內的數字,如果BS的Count不為0的話就顯示Position+1/後面的為總數
 
-        //    if (bindingSource1.Count != 0)
-        //    {
-        //        label2.Text = $"{bindingSource1.Position + 1}/{nwDataSet1.Products.Count}";
-        //    }
+        private void button18_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(nwDataSet1.Products.Rows[0]["ProductName"].ToString());
+                                               //伺服器           資料表         [第幾個ROW][第幾個欄位]
+            MessageBox.Show(nwDataSet1.Products.Rows[0][1].ToString());
+            //------------------------------------同上
+            MessageBox.Show(nwDataSet1.Products[0].ProductName);
+        }
 
-        //}
+        private void button19_Click(object sender, EventArgs e)
+        {
+            nwDataSet1.Products.WriteXml("Products.xml", XmlWriteMode.WriteSchema);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            nwDataSet1.Products.Clear();
+            nwDataSet1.Products.ReadXml("Products.xml");
+            dataGridView4.DataSource = nwDataSet1.Products;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            splitContainer2.Panel1Collapsed =! splitContainer2.Panel1Collapsed;
+        }
     }
 }

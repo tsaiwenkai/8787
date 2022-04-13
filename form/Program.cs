@@ -1,4 +1,5 @@
 ﻿using form._1._Overview;
+using Starter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,10 @@ namespace form
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmOverview());
+            Application.Run(new FrmSqlConnection());
         }
     }
 }

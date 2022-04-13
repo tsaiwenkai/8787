@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
@@ -59,6 +60,24 @@
     <Compile Include="1. Overview\Frmtool.Designer.cs">
       <DependentUpon>Frmtool.cs</DependentUpon>
     </Compile>
+    <Compile Include="2. SQL connection\FrmSqlConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. SQL connection\FrmSqlConnection.designer.cs">
+      <DependentUpon>FrmSqlConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3. Connected\FrmConnected.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3. Connected\FrmConnected.designer.cs">
+      <DependentUpon>FrmConnected.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4. Disconnted\FrmDisConnected_離線DataSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4. Disconnted\FrmDisConnected_離線DataSet.designer.cs">
+      <DependentUpon>FrmDisConnected_離線DataSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="NWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,6 +102,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="1. Overview\Frmtool.resx">
       <DependentUpon>Frmtool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2. SQL connection\FrmSqlConnection.resx">
+      <DependentUpon>FrmSqlConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3. Connected\FrmConnected.resx">
+      <DependentUpon>FrmConnected.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4. Disconnted\FrmDisConnected_離線DataSet.resx">
+      <DependentUpon>FrmDisConnected_離線DataSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="test\fromtset.resx">
       <DependentUpon>fromtset.cs</DependentUpon>
@@ -123,10 +151,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="2. SQL connection\" />
-    <Folder Include="3. Connected\" />
-    <Folder Include="4. Disconnted\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
