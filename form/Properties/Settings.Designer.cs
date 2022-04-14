@@ -66,5 +66,14 @@ namespace form.Properties {
                 this["MyColor"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        public string MyDB {
+            get {
+                return ((string)(this["MyDB"]));
+            }
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.button23 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button12 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -63,8 +64,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.nwDataSet1 = new form.NWDataSet();
+            this.productsTableAdapter1 = new form.NWDataSetTableAdapters.ProductsTableAdapter();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -73,6 +79,8 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -90,7 +98,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1415, 648);
+            this.tabPage3.Size = new System.Drawing.Size(1567, 648);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Connection Pooling 集區";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -206,7 +214,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1415, 648);
+            this.tabPage4.Size = new System.Drawing.Size(1567, 648);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "sql Exception";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -256,6 +264,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.button12);
             this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.button6);
@@ -276,39 +285,53 @@
             this.tabPage1.Text = "connectionStsring";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(364, 33);
+            this.button12.Margin = new System.Windows.Forms.Padding(4);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(304, 52);
+            this.button12.TabIndex = 56;
+            this.button12.Text = "color";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(643, 272);
+            this.button7.Location = new System.Drawing.Point(674, 270);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(320, 70);
             this.button7.TabIndex = 55;
             this.button7.Text = "SQL Server  Local DB 資料庫檔案 - 相對路徑  - sqlConnectionStringBuilder";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(643, 187);
+            this.button6.Location = new System.Drawing.Point(674, 185);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(320, 51);
             this.button6.TabIndex = 54;
             this.button6.Text = "SQL Server  Local DB 資料庫檔案 - 相對路徑  - |DataDirectory|";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(643, 111);
+            this.button5.Location = new System.Drawing.Point(674, 109);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(320, 51);
             this.button5.TabIndex = 53;
             this.button5.Text = "SQL Server  Local DB 資料庫檔案 - 絕對路徑 ";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button59
             // 
-            this.button59.Location = new System.Drawing.Point(278, 351);
+            this.button59.Location = new System.Drawing.Point(364, 351);
             this.button59.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.button59.Name = "button59";
             this.button59.Size = new System.Drawing.Size(304, 51);
@@ -318,7 +341,7 @@
             // 
             // button58
             // 
-            this.button58.Location = new System.Drawing.Point(278, 272);
+            this.button58.Location = new System.Drawing.Point(364, 272);
             this.button58.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.button58.Name = "button58";
             this.button58.Size = new System.Drawing.Size(304, 51);
@@ -339,7 +362,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(278, 185);
+            this.button4.Location = new System.Drawing.Point(364, 185);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(304, 52);
@@ -350,7 +373,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(278, 110);
+            this.button3.Location = new System.Drawing.Point(364, 110);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(304, 52);
@@ -361,7 +384,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(38, 186);
+            this.button2.Location = new System.Drawing.Point(36, 110);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(217, 52);
@@ -372,7 +395,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(38, 109);
+            this.button1.Location = new System.Drawing.Point(36, 33);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 52);
@@ -383,6 +406,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.statusStrip1);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -391,7 +415,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1415, 648);
+            this.tabPage2.Size = new System.Drawing.Size(1567, 648);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "StateChange Event";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -431,6 +455,7 @@
             this.button10.TabIndex = 1;
             this.button10.Text = "2. 0 XXXTableAdapter";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // dataGridView1
             // 
@@ -475,17 +500,47 @@
             this.button11.TabIndex = 0;
             this.button11.Text = "button11";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // button12
+            // panel1
             // 
-            this.button12.Location = new System.Drawing.Point(278, 33);
-            this.button12.Margin = new System.Windows.Forms.Padding(4);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(304, 52);
-            this.button12.TabIndex = 56;
-            this.button12.Text = "color";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(26, 206);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(265, 290);
+            this.panel1.TabIndex = 57;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(4, 622);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1559, 22);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(128, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(128, 17);
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
+            // nwDataSet1
+            // 
+            this.nwDataSet1.DataSetName = "NWDataSet";
+            this.nwDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
             // 
             // FrmSqlConnection
             // 
@@ -502,9 +557,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,5 +606,11 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private form.NWDataSet nwDataSet1;
+        private form.NWDataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
     }
 }

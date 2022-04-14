@@ -20,7 +20,7 @@ namespace form
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmSqlConnection());
+            Application.Run(new FrmOverview());
         }
     }
 }

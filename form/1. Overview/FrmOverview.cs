@@ -16,7 +16,7 @@ namespace form._1._Overview
         public FrmOverview()
         {
             InitializeComponent();
-            tabControl1.SelectedIndex = tabControl1.TabCount-1;
+            tabControl1.SelectedIndex =2;
         }
 
         private void button1_Click(object sender, EventArgs e)
