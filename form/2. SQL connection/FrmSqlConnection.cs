@@ -21,24 +21,24 @@ namespace Starter
         {
 
             InitializeComponent();
-            tabControl1.SelectedIndex = 1;
+            tabControl1.SelectedIndex = 2;
             tabPage1.BackColor = Settings.Default.MyColor;
             //----------------------------------------------------------------
             string[] city = { "Taipei", "Tokyo", "Sydeny" };
             for (int i = 0; i < city.Length; i++)
             {
-               
+
                 LinkLabel x = new LinkLabel();
                 x.Text = city[i];
-                
+
                 x.Left = 5;
-                x.Top = 30*i;
+                x.Top = 30 * i;
                 x.Tag = i;
 
                 x.Click += X_Click;
                 panel1.Controls.Add(x);
             }
-            
+
         }
 
         private void X_Click(object sender, EventArgs e)
@@ -210,7 +210,7 @@ namespace Starter
             //string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = @"(LocalDB)\MSSQLLocalDB";
-            builder.AttachDBFilename=Application.StartupPath+@"\Database1.mdf";
+            builder.AttachDBFilename = Application.StartupPath + @"\Database1.mdf";
             builder.IntegratedSecurity = true;
             try
             {
@@ -260,7 +260,7 @@ namespace Starter
         private void Conn_StateChange1(object sender, StateChangeEventArgs e)
         {
             //toolStripStatusLabel1.Text = e.CurrentState.ToString();
-           statusStrip1.Items[0].Text= e.CurrentState.ToString();
+            statusStrip1.Items[0].Text = e.CurrentState.ToString();
             statusStrip1.Items[1].Text = DateTime.Now.ToLongTimeString();
             Application.DoEvents();
             Thread.Sleep(700);
@@ -274,6 +274,37 @@ namespace Starter
             dataGridView1.DataSource = nwDataSet1.Products;
         }
 
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SqlConnection[] conn = new SqlConnection[100];
+            for (int i = 0; i < conn.Length; i++)
+            {
+                conn[i] = new SqlConnection(Settings.Default.NorthwindConnectionString);
+                conn[i].Open();
 
+                label3.Text = $"{i + 1}";
+                Application.DoEvents();
+                //Thread.Sleep(100);
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            const int MaxpoolSize = 200;
+
+            SqlConnection[] conn = new SqlConnection[MaxpoolSize];
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(Settings.Default.MyAwConnectionString);
+            builder.MaxPoolSize = MaxpoolSize;
+            builder.ConnectTimeout = 1;
+
+            for (int i = 0; i < conn.Length; i++)
+            {
+                conn[i] = new SqlConnection(builder.ConnectionString);
+                conn[i].Open();
+
+                label3.Text = $"{i + 1}";
+                Application.DoEvents();
+            }
+        }
     }
 }

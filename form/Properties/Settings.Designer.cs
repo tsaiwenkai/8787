@@ -70,9 +70,21 @@ namespace form.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Student\\Source\\Repos" +
+            "\\tsaiwenkai\\-\\form\\Database1.mdf;Integrated Security=True")]
         public string MyDB {
             get {
                 return ((string)(this["MyDB"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=AdventureWorks2019;Integrated Security=True")]
+        public string MyAwConnectionString {
+            get {
+                return ((string)(this["MyAwConnectionString"]));
             }
         }
     }

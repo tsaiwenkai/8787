@@ -75,6 +75,12 @@
     <Compile Include="1. Overview\Frmtool.Designer.cs">
       <DependentUpon>Frmtool.cs</DependentUpon>
     </Compile>
+    <Compile Include="2. SQL connection\FrmImageFlags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. SQL connection\FrmImageFlags.designer.cs">
+      <DependentUpon>FrmImageFlags.cs</DependentUpon>
+    </Compile>
     <Compile Include="2. SQL connection\FrmSqlConnection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="1. Overview\Frmtool.resx">
       <DependentUpon>Frmtool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2. SQL connection\FrmImageFlags.resx">
+      <DependentUpon>FrmImageFlags.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. SQL connection\FrmSqlConnection.resx">
       <DependentUpon>FrmSqlConnection.cs</DependentUpon>
