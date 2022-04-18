@@ -52,6 +52,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -104,6 +105,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NWDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="System\Web\Security.cs" />
     <Compile Include="test\fromtset.cs">
       <SubType>Form</SubType>
     </Compile>

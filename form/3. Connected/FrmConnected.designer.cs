@@ -29,40 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.ListViewGroup listViewGroup19 = new System.Windows.Forms.ListViewGroup("USA(1)", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup20 = new System.Windows.Forms.ListViewGroup("Taiwan(2)", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Node5");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Node6");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Node7");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Node8");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Node4", new System.Windows.Forms.TreeNode[] {
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17});
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("USA(1)", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Taiwan(2)", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "aaa",
             "Taiwan",
             "asdasd"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "bbb",
             "Taiwan",
             "asdasd"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "ccc",
             "asdas",
             "asdasd"}, -1);
-            System.Windows.Forms.TreeNode treeNode82 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode83 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode84 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode85 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode86 = new System.Windows.Forms.TreeNode("Node5");
-            System.Windows.Forms.TreeNode treeNode87 = new System.Windows.Forms.TreeNode("Node6");
-            System.Windows.Forms.TreeNode treeNode88 = new System.Windows.Forms.TreeNode("Node7");
-            System.Windows.Forms.TreeNode treeNode89 = new System.Windows.Forms.TreeNode("Node8");
-            System.Windows.Forms.TreeNode treeNode90 = new System.Windows.Forms.TreeNode("Node4", new System.Windows.Forms.TreeNode[] {
-            treeNode86,
-            treeNode87,
-            treeNode88,
-            treeNode89});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConnected));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button25 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -134,22 +135,24 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button22 = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.listView3 = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.button22 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lrageIcanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smallIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ImageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.myMemberTableAdapter1 = new form.NWDataSetTableAdapters.MyMemberTableAdapter();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox4.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,10 +178,10 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -212,6 +215,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.flowLayoutPanel1);
             this.tabPage6.Controls.Add(this.button25);
             this.tabPage6.Controls.Add(this.button24);
             this.tabPage6.Controls.Add(this.textBox4);
@@ -220,11 +224,22 @@
             this.tabPage6.Controls.Add(this.label4);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage6.Size = new System.Drawing.Size(809, 373);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1021, 440);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Insert Image";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(478, 28);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(439, 252);
+            this.flowLayoutPanel1.TabIndex = 6;
             // 
             // button25
             // 
@@ -234,6 +249,7 @@
             this.button25.TabIndex = 5;
             this.button25.Text = "Insert to DB";
             this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // button24
             // 
@@ -243,6 +259,7 @@
             this.button24.TabIndex = 4;
             this.button24.Text = "Browse...";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // textBox4
             // 
@@ -308,6 +325,7 @@
             this.button8.TabIndex = 12;
             this.button8.Text = "Add Member";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button23
             // 
@@ -317,14 +335,15 @@
             this.button23.TabIndex = 0;
             this.button23.Text = "DDL - Create Image Table";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.button23);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage5.Size = new System.Drawing.Size(806, 368);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1021, 440);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Create Image Table";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -369,7 +388,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(814, 394);
+            this.tabControl2.Size = new System.Drawing.Size(1029, 466);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage7
@@ -382,7 +401,7 @@
             this.tabPage7.Controls.Add(this.listBox3);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(809, 373);
+            this.tabPage7.Size = new System.Drawing.Size(1021, 440);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Load Data";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -395,6 +414,7 @@
             this.button27.TabIndex = 5;
             this.button27.Text = "Load Data";
             this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // listBox5
             // 
@@ -404,14 +424,15 @@
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(479, 160);
             this.listBox5.TabIndex = 4;
+            this.listBox5.SelectedIndexChanged += new System.EventHandler(this.listBox5_SelectedIndexChanged);
             // 
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 12;
-            this.listBox4.Location = new System.Drawing.Point(53, 258);
+            this.listBox4.Location = new System.Drawing.Point(19, 33);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(173, 124);
+            this.listBox4.Size = new System.Drawing.Size(39, 160);
             this.listBox4.TabIndex = 3;
             // 
             // pictureBox2
@@ -432,22 +453,24 @@
             this.button26.TabIndex = 1;
             this.button26.Text = "Load Data";
             this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 12;
-            this.listBox3.Location = new System.Drawing.Point(53, 33);
+            this.listBox3.Location = new System.Drawing.Point(64, 33);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(173, 160);
             this.listBox3.TabIndex = 0;
+            this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.tabControl2);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(814, 394);
+            this.tabPage4.Size = new System.Drawing.Size(1029, 466);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Image";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -491,6 +514,7 @@
             this.button16.TabIndex = 1;
             this.button16.Text = "ExecuteScalar - return 一個結果值";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button19
             // 
@@ -562,6 +586,7 @@
             this.button18.TabIndex = 9;
             this.button18.Text = "ExecuteReader - return 多個結果集";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // groupBox8
             // 
@@ -635,7 +660,7 @@
             // button20
             // 
             this.button20.Location = new System.Drawing.Point(29, 58);
-            this.button20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button20.Margin = new System.Windows.Forms.Padding(2);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(193, 26);
             this.button20.TabIndex = 11;
@@ -735,7 +760,7 @@
             this.tabPage8.Controls.Add(this.button28);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(814, 394);
+            this.tabPage8.Size = new System.Drawing.Size(1029, 466);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Transaction";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -743,7 +768,7 @@
             // button21
             // 
             this.button21.Location = new System.Drawing.Point(29, 90);
-            this.button21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button21.Margin = new System.Windows.Forms.Padding(2);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(193, 24);
             this.button21.TabIndex = 12;
@@ -753,7 +778,7 @@
             // button30
             // 
             this.button30.Location = new System.Drawing.Point(265, 265);
-            this.button30.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button30.Margin = new System.Windows.Forms.Padding(2);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(93, 23);
             this.button30.TabIndex = 102;
@@ -817,6 +842,7 @@
             this.button12.TabIndex = 6;
             this.button12.Text = "Add Member";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // label3
             // 
@@ -857,7 +883,7 @@
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1029, 466);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Member";
@@ -888,23 +914,23 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Location = new System.Drawing.Point(763, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -953,57 +979,46 @@
             this.splitContainer1.SplitterDistance = 204;
             this.splitContainer1.TabIndex = 0;
             // 
-            // listView1
+            // button22
             // 
-            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.LargeImageList = this.ImageList2;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1023, 252);
-            this.listView1.SmallImageList = this.ImageList1;
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.button22.Location = new System.Drawing.Point(489, 132);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(87, 29);
+            this.button22.TabIndex = 6;
+            this.button22.Text = "button22";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
-            // tabPage1
+            // treeView1
             // 
-            this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(1029, 466);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "TreeView/ListView";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1037, 492);
-            this.tabControl1.TabIndex = 1;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.groupBox10);
-            this.tabPage3.Controls.Add(this.listBox2);
-            this.tabPage3.Controls.Add(this.listBox1);
-            this.tabPage3.Controls.Add(this.groupBox9);
-            this.tabPage3.Controls.Add(this.groupBox8);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(814, 394);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "ExecuteXXX";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.treeView1.Location = new System.Drawing.Point(479, 12);
+            this.treeView1.Name = "treeView1";
+            treeNode10.Name = "Node0";
+            treeNode10.Text = "Node0";
+            treeNode11.Name = "Node1";
+            treeNode11.Text = "Node1";
+            treeNode12.Name = "Node2";
+            treeNode12.Text = "Node2";
+            treeNode13.Name = "Node3";
+            treeNode13.Text = "Node3";
+            treeNode14.Name = "Node5";
+            treeNode14.Text = "Node5";
+            treeNode15.Name = "Node6";
+            treeNode15.Text = "Node6";
+            treeNode16.Name = "Node7";
+            treeNode16.Text = "Node7";
+            treeNode17.Name = "Node8";
+            treeNode17.Text = "Node8";
+            treeNode18.Name = "Node4";
+            treeNode18.Text = "Node4";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13,
+            treeNode18});
+            this.treeView1.Size = new System.Drawing.Size(223, 102);
+            this.treeView1.TabIndex = 5;
             // 
             // listView3
             // 
@@ -1011,21 +1026,21 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            listViewGroup19.Header = "USA(1)";
-            listViewGroup19.Name = "listViewGroup1";
-            listViewGroup20.Header = "Taiwan(2)";
-            listViewGroup20.Name = "listViewGroup2";
+            listViewGroup3.Header = "USA(1)";
+            listViewGroup3.Name = "listViewGroup1";
+            listViewGroup4.Header = "Taiwan(2)";
+            listViewGroup4.Name = "listViewGroup2";
             this.listView3.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup19,
-            listViewGroup20});
+            listViewGroup3,
+            listViewGroup4});
             this.listView3.HideSelection = false;
-            listViewItem28.Group = listViewGroup19;
-            listViewItem29.Group = listViewGroup20;
-            listViewItem30.Group = listViewGroup20;
+            listViewItem4.Group = listViewGroup3;
+            listViewItem5.Group = listViewGroup4;
+            listViewItem6.Group = listViewGroup4;
             this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem28,
-            listViewItem29,
-            listViewItem30});
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
             this.listView3.Location = new System.Drawing.Point(243, 12);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(230, 150);
@@ -1045,46 +1060,18 @@
             // 
             this.columnHeader6.Text = "aaa";
             // 
-            // treeView1
+            // listView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(479, 12);
-            this.treeView1.Name = "treeView1";
-            treeNode82.Name = "Node0";
-            treeNode82.Text = "Node0";
-            treeNode83.Name = "Node1";
-            treeNode83.Text = "Node1";
-            treeNode84.Name = "Node2";
-            treeNode84.Text = "Node2";
-            treeNode85.Name = "Node3";
-            treeNode85.Text = "Node3";
-            treeNode86.Name = "Node5";
-            treeNode86.Text = "Node5";
-            treeNode87.Name = "Node6";
-            treeNode87.Text = "Node6";
-            treeNode88.Name = "Node7";
-            treeNode88.Text = "Node7";
-            treeNode89.Name = "Node8";
-            treeNode89.Text = "Node8";
-            treeNode90.Name = "Node4";
-            treeNode90.Text = "Node4";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode82,
-            treeNode83,
-            treeNode84,
-            treeNode85,
-            treeNode90});
-            this.treeView1.Size = new System.Drawing.Size(223, 102);
-            this.treeView1.TabIndex = 5;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(489, 132);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(87, 29);
-            this.button22.TabIndex = 6;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.HideSelection = false;
+            this.listView1.LargeImageList = this.ImageList2;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1023, 252);
+            this.listView1.SmallImageList = this.ImageList1;
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // contextMenuStrip1
             // 
@@ -1116,30 +1103,6 @@
             this.detailViewToolStripMenuItem.Text = "Detail View";
             this.detailViewToolStripMenuItem.Click += new System.EventHandler(this.detailViewToolStripMenuItem_Click);
             // 
-            // ImageList1
-            // 
-            this.ImageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList1.ImageStream")));
-            this.ImageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList1.Images.SetKeyName(0, "FLGGERM.ICO");
-            this.ImageList1.Images.SetKeyName(1, "CTRCAN.ICO");
-            this.ImageList1.Images.SetKeyName(2, "CTRFRAN.ICO");
-            this.ImageList1.Images.SetKeyName(3, "CTRGERM.ICO");
-            this.ImageList1.Images.SetKeyName(4, "CTRITALY.ICO");
-            this.ImageList1.Images.SetKeyName(5, "CTRJAPAN.ICO");
-            this.ImageList1.Images.SetKeyName(6, "CTRMEX.ICO");
-            this.ImageList1.Images.SetKeyName(7, "CTRSKOR.ICO");
-            this.ImageList1.Images.SetKeyName(8, "CTRSPAIN.ICO");
-            this.ImageList1.Images.SetKeyName(9, "CTRUK.ICO");
-            this.ImageList1.Images.SetKeyName(10, "CTRUSA.ICO");
-            this.ImageList1.Images.SetKeyName(11, "FLGASTRL.ICO");
-            this.ImageList1.Images.SetKeyName(12, "FLGAUSTA.ICO");
-            this.ImageList1.Images.SetKeyName(13, "FLGBELG.ICO");
-            this.ImageList1.Images.SetKeyName(14, "FLGBRAZL.ICO");
-            this.ImageList1.Images.SetKeyName(15, "FLGCAN.ICO");
-            this.ImageList1.Images.SetKeyName(16, "FLGDEN.ICO");
-            this.ImageList1.Images.SetKeyName(17, "FLGFIN.ICO");
-            this.ImageList1.Images.SetKeyName(18, "FLGFRAN.ICO");
-            // 
             // ImageList2
             // 
             this.ImageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList2.ImageStream")));
@@ -1164,6 +1127,77 @@
             this.ImageList2.Images.SetKeyName(17, "FLGFIN.ICO");
             this.ImageList2.Images.SetKeyName(18, "FLGFRAN.ICO");
             // 
+            // ImageList1
+            // 
+            this.ImageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList1.ImageStream")));
+            this.ImageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList1.Images.SetKeyName(0, "FLGGERM.ICO");
+            this.ImageList1.Images.SetKeyName(1, "CTRCAN.ICO");
+            this.ImageList1.Images.SetKeyName(2, "CTRFRAN.ICO");
+            this.ImageList1.Images.SetKeyName(3, "CTRGERM.ICO");
+            this.ImageList1.Images.SetKeyName(4, "CTRITALY.ICO");
+            this.ImageList1.Images.SetKeyName(5, "CTRJAPAN.ICO");
+            this.ImageList1.Images.SetKeyName(6, "CTRMEX.ICO");
+            this.ImageList1.Images.SetKeyName(7, "CTRSKOR.ICO");
+            this.ImageList1.Images.SetKeyName(8, "CTRSPAIN.ICO");
+            this.ImageList1.Images.SetKeyName(9, "CTRUK.ICO");
+            this.ImageList1.Images.SetKeyName(10, "CTRUSA.ICO");
+            this.ImageList1.Images.SetKeyName(11, "FLGASTRL.ICO");
+            this.ImageList1.Images.SetKeyName(12, "FLGAUSTA.ICO");
+            this.ImageList1.Images.SetKeyName(13, "FLGBELG.ICO");
+            this.ImageList1.Images.SetKeyName(14, "FLGBRAZL.ICO");
+            this.ImageList1.Images.SetKeyName(15, "FLGCAN.ICO");
+            this.ImageList1.Images.SetKeyName(16, "FLGDEN.ICO");
+            this.ImageList1.Images.SetKeyName(17, "FLGFIN.ICO");
+            this.ImageList1.Images.SetKeyName(18, "FLGFRAN.ICO");
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.splitContainer1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1029, 466);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "TreeView/ListView";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1037, 492);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox10);
+            this.tabPage3.Controls.Add(this.listBox2);
+            this.tabPage3.Controls.Add(this.listBox1);
+            this.tabPage3.Controls.Add(this.groupBox9);
+            this.tabPage3.Controls.Add(this.groupBox8);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1029, 466);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "ExecuteXXX";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // myMemberTableAdapter1
+            // 
+            this.myMemberTableAdapter1.ClearBeforeFill = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FrmConnected
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1171,7 +1205,7 @@
             this.ClientSize = new System.Drawing.Size(1037, 492);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmConnected";
             this.Text = "FrmConnected";
             this.groupBox4.ResumeLayout(false);
@@ -1204,10 +1238,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1305,5 +1339,8 @@
         private System.Windows.Forms.ToolStripMenuItem detailViewToolStripMenuItem;
         internal System.Windows.Forms.ImageList ImageList1;
         internal System.Windows.Forms.ImageList ImageList2;
+        private form.NWDataSetTableAdapters.MyMemberTableAdapter myMemberTableAdapter1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -17,38 +17,83 @@ namespace Starter
         public FrmConnected()
         {
             InitializeComponent();
-            tabControl1.SelectedIndex = 1;
+            tabControl1.SelectedIndex = 3;
 
             //把list view改成 Details
             this.listView1.View = View.Details;
 
             LoadCountryinCombobox();
             CreadListview();
+
+            this.pictureBox1.AllowDrop = true;
+            pictureBox1.DragEnter += PictureBox1_DragEnter;
+            pictureBox1.DragDrop += PictureBox1_DragDrop;
+            //------------------------------
+            flowLayoutPanel1.AllowDrop = true;
+            flowLayoutPanel1.DragEnter += FlowLayoutPanel1_DragEnter;
+            flowLayoutPanel1.DragDrop += FlowLayoutPanel1_DragDrop;
+
+
+        }
+
+        private void FlowLayoutPanel1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] file = (string[])e.Data.GetData(DataFormats.FileDrop);
+            for(int i = 0; i < file.Length; i++)
+            {
+                PictureBox pic = new PictureBox();
+                pic.Image = Image.FromFile(file[i]);
+                pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                pic.Width = 120;
+                pic.Height =120;
+
+
+                flowLayoutPanel1.Controls.Add(pic);
+            }
+        }
+
+        private void FlowLayoutPanel1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect=DragDropEffects.Copy;
+        }
+
+        private void PictureBox1_DragDrop(object sender, DragEventArgs e)
+        {
+
+            string[] file = (string[])e.Data.GetData(DataFormats.FileDrop);
+            pictureBox1.Image = Image.FromFile(file[0]);
+        }
+
+
+        private void PictureBox1_DragEnter(object sender, DragEventArgs e)
+        {
+
+            e.Effect = DragDropEffects.Copy;       
         }
 
         private void CreadListview()
         {
-             try
+            try
             {
                 using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
                 {
                     conn.Open();
                     SqlCommand command = new SqlCommand("select * from Customers", conn);
                     SqlDataReader dataReader = command.ExecuteReader();
-                   DataTable dt= dataReader.GetSchemaTable();
+                    DataTable dt = dataReader.GetSchemaTable();
                     dataGridView1.DataSource = dt;
 
 
 
                     //把資料裡面有幾個Row提出來
-                    for(int i = 0; i < dt.Rows.Count; i++)
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         //List的Columns=資料表裡的 ROW [有幾個] [第幾行]
                         listView1.Columns.Add(dt.Rows[i][0].ToString());
                     }
                     // 資料裡的Columns自動等距     
-                    listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);  
-                    
+                    listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
 
 
                 }
@@ -61,7 +106,7 @@ namespace Starter
 
         private void LoadCountryinCombobox()
         {
-           //Select
+            //Select
             try
             {
                 using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
@@ -73,7 +118,7 @@ namespace Starter
                     {
                         comboBox1.Items.Add(dataReader["Country"]);
                     }
-                    comboBox1.SelectedItem ="USA";
+                    comboBox1.SelectedItem = "USA";
                 }
             }
             catch (Exception ex)
@@ -201,7 +246,7 @@ namespace Starter
                     if (dataReader.HasRows)
                     {
                         MessageBox.Show("登入成功");
-                        
+
                     }
                     else
                     {
@@ -228,12 +273,12 @@ namespace Starter
 
 
                     //前面的部分是使用Para...add...的方式 把  U的變數帶入 @"UserName"裡
-                    command.Parameters.Add("@UserName", SqlDbType.NVarChar, 16).Value=U;
+                    command.Parameters.Add("@UserName", SqlDbType.NVarChar, 16).Value = U;
                     //command.Parameters.Add("PassWord", SqlDbType.NVarChar, 40).Value=P;
                     //分解示如下
                     SqlParameter p1 = new SqlParameter();
                     p1.ParameterName = "@PassWord";
-                    p1.SqlDbType= SqlDbType.NVarChar;
+                    p1.SqlDbType = SqlDbType.NVarChar;
                     p1.Size = 40;
                     p1.Value = P;
                     command.Parameters.Add(p1);
@@ -260,7 +305,7 @@ namespace Starter
                 {
                     string U = textBox1.Text;
                     string P = textBox2.Text;
-                    
+
                     SqlCommand command = new SqlCommand();// ("select distinct Country from Customers", conn);
                     command.CommandText = $"select * from MyMember where UserName=@UserName and PassWord=@Password";
                     command.Connection = conn;
@@ -298,14 +343,14 @@ namespace Starter
                     string U = textBox1.Text;
                     string P = textBox2.Text;
                     SqlCommand command = new SqlCommand();
-                    command.CommandText ="InsertMember";
+                    command.CommandText = "InsertMember";
                     command.CommandType = CommandType.StoredProcedure;
                     command.Connection = conn;
                     conn.Open();
- 
-                    
+
+
                     command.Parameters.Add("@UserName", SqlDbType.NVarChar, 16).Value = U;
-                    command.Parameters.Add("PassWord", SqlDbType.NVarChar, 40).Value=P;
+                    command.Parameters.Add("PassWord", SqlDbType.NVarChar, 40).Value = P;
 
                     //-----------------------------------------------------------
                     SqlParameter p1 = new SqlParameter();
@@ -313,8 +358,8 @@ namespace Starter
                     p1.Direction = ParameterDirection.ReturnValue;
                     command.Parameters.Add(p1);
                     command.ExecuteNonQuery();
-                    
-                    MessageBox.Show("+Meber sucessfull   MBID="+p1.Value);
+
+                    MessageBox.Show("+Meber sucessfull   MBID=" + p1.Value);
                 }
 
             }
@@ -362,5 +407,311 @@ namespace Starter
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    string U = textBox1.Text;
+                    string P = textBox2.Text;
+                    P = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(P, "sha1");
+                    SqlCommand command = new SqlCommand(); //("select distinct Country from Customers", conn);
+                    command.CommandText = $"Insert into MyMember (UserName,Password) Values (@UserName,@Password)";
+
+
+                    //前面的部分是使用Para...add...的方式 把  U的變數帶入 @"UserName"裡
+                    command.Parameters.Add("@UserName", SqlDbType.NVarChar, 16).Value = U;
+                    //command.Parameters.Add("PassWord", SqlDbType.NVarChar, 40).Value=P;
+                    //分解示如下
+                    SqlParameter p1 = new SqlParameter();
+                    p1.ParameterName = "@PassWord";
+                    p1.SqlDbType = SqlDbType.NVarChar;
+                    p1.Size = 40;
+                    p1.Value = P;
+                    command.Parameters.Add(p1);
+
+                    command.Connection = conn;
+                    conn.Open();
+
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("+Meber sucessfull");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.myMemberTableAdapter1.Insert("XXX", "xxx");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    SqlCommand comm = new SqlCommand();
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    comm.CommandText = "Select sum(UnitPrice) from Products";
+                    listBox2.Items.Add($"UnitPrice Min=  {comm.ExecuteScalar():c2}");
+
+                    comm.CommandText = "Select Max(UnitPrice) from Products";
+                    listBox2.Items.Add($"UnitPrice Min=  {comm.ExecuteScalar():c2}");
+
+                    comm.CommandText = "Select Min(UnitPrice) from Products";
+                    listBox2.Items.Add($"UnitPrice Min=  {comm.ExecuteScalar():c2}");
+
+                    comm.CommandText = "Select Avg(UnitPrice) from Products";
+                    listBox2.Items.Add($"UnitPrice Avg=  {comm.ExecuteScalar():c2}");
+
+                    comm.CommandText = "Select Count(*) from Products";
+                    listBox2.Items.Add($"UnitPrice Count=  {comm.ExecuteScalar()}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    SqlCommand comm = new SqlCommand();
+                    comm.CommandText = "Select * from Categories;Select * from Products";
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    SqlDataReader reader = comm.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        listBox1.Items.Add(reader["CategoryName"]);
+                    }
+                    //-------------------------
+
+
+                    reader.NextResult();
+                    while (reader.Read())
+                    {
+                        listBox2.Items.Add(reader["ProductName"]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            string Sqlcommand = " CREATE TABLE[dbo].[MyImageTable](   " +
+                "[ImageID][int] IDENTITY(1, 1) NOT NULL,   " +
+                "[Description] [text] NULL,	" +
+                "[Image] [image] NULL, " +
+                "CONSTRAINT[PK_MyImageTable] " +
+                "PRIMARY KEY CLUSTERED(   [ImageID] ASC)WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY]) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    SqlCommand comm = new SqlCommand();
+                    comm.CommandText = Sqlcommand;
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    comm.ExecuteNonQuery();
+                    MessageBox.Show("Cread MyImage Successful");
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "(*.jpg)|*.jpg";
+            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image =Image.FromFile (this.openFileDialog1.FileName);
+            }
+           
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {               
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = $"Insert into MyImageTable (Description,Image) Values (@Desc,@Image)";
+
+                    //----------------------------------
+                    //下列陣列裡放圖片2進制 圖片的資料型態是陣列
+                    byte[] bytes;//= { 1, 3 };
+
+                    //先做一個放資料的記憶體
+                    System.IO.MemoryStream da = new System.IO.MemoryStream();
+
+                    //把Picturebox裡的圖片存在剛建立的記憶體裡(記憶體,指定資料型態)
+                    pictureBox1.Image.Save(da, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                   //剛剛建立的陣列從記憶體裡getbuffer出來
+                    bytes = da.GetBuffer();
+                    //--------------------------------------
+
+                    command.Parameters.Add("@Desc", SqlDbType.Text).Value = this.textBox4.Text;
+                     
+                    command.Parameters.Add("@Image", SqlDbType.Image).Value = bytes;  //bytes變數為圖片2進制格式為陣列
+                 
+
+                    command.Connection = conn;
+                    conn.Open();
+
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("+ Image sucessfull");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    SqlCommand comm = new SqlCommand();
+                    comm.CommandText = "Select * from MyImageTable";
+                    comm.Connection = conn;
+                    conn.Open();
+                    SqlDataReader reader = comm.ExecuteReader();
+
+                    listBox3.Items.Clear();
+                    listBox4.Items.Clear();
+                    while (reader.Read())
+                    {
+                        listBox3.Items.Add(reader["Description"]);
+
+                        //lbx4來放ID方便查詢圖片
+                        listBox4.Items.Add(reader["ImageID"]);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //做一個int 變數來做下列方式查詢      //lB4 Item裡面是放 IMG ID所以後面索引是要取LB3的索引
+            int image = (int)listBox4.Items[listBox3.SelectedIndex];
+            ShowImage(image);
+        }
+
+        private void ShowImage(int image)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = $"Select*from MyImageTable where ImageID={image}";
+                    command.Connection = conn;
+
+                    conn.Open();
+
+                    SqlDataReader reader= command.ExecuteReader();
+                    reader.Read();
+                   // if (reader.HasRows)
+                   // {
+
+                        byte[] bytes = (byte[])reader["Image"];
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes);
+                        pictureBox2.Image = Image.FromStream(ms);
+                      
+                   // }
+                  //  else
+                 //   {
+                 //     pictureBox2.Image = pictureBox2.ErrorImage;                      
+                 //   }              
+                }
+            }
+            catch
+            {
+                pictureBox2.Image = pictureBox2.ErrorImage;
+            }
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    SqlCommand comm = new SqlCommand();
+                    comm.CommandText = "Select * from MyImageTable";
+                    comm.Connection = conn;
+                    conn.Open();
+                    SqlDataReader reader = comm.ExecuteReader();
+
+                    listBox5.Items.Clear();
+                    while (reader.Read())
+                    {
+                        MyImage myImage = new MyImage();
+                        myImage.Description = reader["Description"].ToString();
+                        myImage.Image = (int)reader["ImageID"] ;
+                        listBox5.Items.Add(myImage);
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void listBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //宣告另一個類別來放參數
+            //lisB5裡面add類別
+            //int 變數裡放 lis5裡的selecteditem 要轉成 Myimage型別的
+            int image = ((MyImage)listBox5.SelectedItem).Image;
+            ShowImage(image);
+        }
     }
+    class MyImage
+    {
+       internal string Description;
+       internal int Image;
+
+    }
+        
+
 }
