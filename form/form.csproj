@@ -52,6 +52,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -94,11 +95,35 @@
     <Compile Include="3. Connected\FrmConnected.designer.cs">
       <DependentUpon>FrmConnected.cs</DependentUpon>
     </Compile>
+    <Compile Include="3. Connected\FrmTransactionIsolation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3. Connected\FrmTransactionIsolation.designer.cs">
+      <DependentUpon>FrmTransactionIsolation.cs</DependentUpon>
+    </Compile>
     <Compile Include="4. Disconnted\FrmDisConnected_離線DataSet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="4. Disconnted\FrmDisConnected_離線DataSet.designer.cs">
       <DependentUpon>FrmDisConnected_離線DataSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmdialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmdialog.Designer.cs">
+      <DependentUpon>Frmdialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductCRUD.Designer.cs">
+      <DependentUpon>FrmProductCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductDetail.Designer.cs">
+      <DependentUpon>FrmProductDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="NWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -136,8 +161,20 @@
     <EmbeddedResource Include="3. Connected\FrmConnected.resx">
       <DependentUpon>FrmConnected.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="3. Connected\FrmTransactionIsolation.resx">
+      <DependentUpon>FrmTransactionIsolation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="4. Disconnted\FrmDisConnected_離線DataSet.resx">
       <DependentUpon>FrmDisConnected_離線DataSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmdialog.resx">
+      <DependentUpon>Frmdialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductCRUD.resx">
+      <DependentUpon>FrmProductCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductDetail.resx">
+      <DependentUpon>FrmProductDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="test\fromtset.resx">
       <DependentUpon>fromtset.cs</DependentUpon>
@@ -177,15 +214,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

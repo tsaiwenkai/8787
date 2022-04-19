@@ -17,7 +17,7 @@ namespace Starter
         public FrmConnected()
         {
             InitializeComponent();
-            tabControl1.SelectedIndex = 3;
+            tabControl1.SelectedIndex = 4;
 
             //把list view改成 Details
             this.listView1.View = View.Details;
@@ -704,6 +704,73 @@ namespace Starter
             //int 變數裡放 lis5裡的selecteditem 要轉成 Myimage型別的
             int image = ((MyImage)listBox5.SelectedItem).Image;
             ShowImage(image);
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    SqlCommand command = new SqlCommand();
+
+                    command.Connection = conn;
+                    conn.Open();
+                    command.CommandText = $"Insert into Region (RegionID,RegionDescription) Values (100,'xxx')";
+                    command.ExecuteNonQuery();
+
+                    //command.CommandText = $"Insert into Region (RegionID,RegionDescription) Values (100,'asdasd')";
+                    //command.ExecuteNonQuery();
+
+                    command.CommandText = $"Insert into Region (RegionID,RegionDescription) Values (101,'yyy')";
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("+ Region sucessfull");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            SqlTransaction txn = null;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    // SqlConnection conn = new SqlConnection();
+
+                    SqlCommand command = new SqlCommand();
+
+                    command.Connection = conn;
+                    conn.Open();
+
+                    txn = conn.BeginTransaction();
+                    command.Transaction = txn;
+
+                    command.CommandText = $"Insert into Region (RegionID,RegionDescription) Values (100,'xxx')";
+                    command.ExecuteNonQuery();
+
+                    //command.CommandText = $"Insert into Region (RegionID,RegionDescription) Values (100,'asdasd')";
+                    //command.ExecuteNonQuery();
+
+                    command.CommandText = $"Insert into Region (RegionID,RegionDescription) Values (101,'yyy')";
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("+ Region sucessfull");
+
+
+                    txn.Commit();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                txn.Rollback();
+            }
         }
     }
     class MyImage

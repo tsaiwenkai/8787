@@ -1,4 +1,5 @@
-﻿using form._1._Overview;
+﻿using Demo;
+using form._1._Overview;
 using Starter;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace form
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmConnected());
+            Application.Run(new FrmProductCRUD());
         }
     }
 }
